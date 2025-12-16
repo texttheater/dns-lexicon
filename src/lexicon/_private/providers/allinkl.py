@@ -37,6 +37,8 @@ class Provider(BaseProvider):
         self.browser.select_form('form[method="post"]')
         self.browser["record_name"] = name
         self.browser["record_type"] = rtype
+        if self._get_lexicon_option("priority"):
+            self.browser["record_aux"] = self._get_lexicon_option("priority")
         self.browser["record_data"] = content
         self.browser.submit_selected().raise_for_status()
 
