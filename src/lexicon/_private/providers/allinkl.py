@@ -1,7 +1,7 @@
 from urllib.parse import quote
 
 
-import mechanicalsoup # type: ignore
+import mechanicalsoup  # type: ignore
 
 
 from lexicon.interfaces import Provider as BaseProvider
@@ -41,10 +41,10 @@ class Provider(BaseProvider):
         self.browser.submit_selected().raise_for_status()
 
     def list_records(self, rtype=None, name=None, content=None):
-        raise UnsupportedOperation()
+        raise NotImplementedError()
 
     def update_record(self, identifier, rtype, name, content):
-        raise UnsupportedOperation()
+        raise NotImplementedError()
 
     def delete_record(self, identifier=None, rtype=None, name=None, content=None):
-        raise UnsupportedOperation()
+        raise NotImplementedError()
