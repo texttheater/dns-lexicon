@@ -126,6 +126,7 @@ or ``self._get_provider_option('auth_token')`` respectively.
         full = [
             "additionalpackage >= 1",
         ]
+    - after adding the dependencies, rerun ``uv sync --extra full``
 
 .. _Provider: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/interfaces.py
 .. _cloudflare.py: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/providers/cloudflare.py
@@ -142,8 +143,8 @@ analysis must pass. You can run them with the following command:
 
 .. code-block:: bash
 
-    tox -e lint
-    tox -e mypy
+    uvx --with tox-uv tox -e lint
+    uvx --with tox-uv tox -e mypy
 
 Test against the live API
 -------------------------
@@ -152,7 +153,7 @@ First let's validate that your provider shows up in the CLI.
 
 .. code-block:: bash
 
-    lexicon foo --help
+    uv run lexicon foo --help
 
 If everything worked correctly, you should get a help page that's specific
 to your provider, including your custom optional arguments.
@@ -162,8 +163,8 @@ everything works as you expect.
 
 .. code-block:: bash
 
-    lexicon foo list example.com TXT
-    lexicon foo create example.com TXT --name demo --content "fake content"
+    uv run lexicon foo list example.com TXT
+    uv run lexicon foo create example.com TXT --name demo --content "fake content"
 
 Once you're satisfied that your provider is working correctly, we'll run the
 integration test suite against it, and verify that your provider responds the
