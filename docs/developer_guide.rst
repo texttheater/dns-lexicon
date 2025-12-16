@@ -14,7 +14,7 @@ Fork, then clone the repo:
 
 .. code-block:: bash
 
-    git clone git@github.com:your-username/lexicon.git
+    git clone git@github.com:your-username/dns-lexicon.git
 
 Install UV if you not have it already:
 
@@ -35,18 +35,6 @@ Configure the virtual environment with full providers support:
     cd lexicon
     uv sync --extra full
 
-Activate the virtual environment
-
-.. code-block:: bash
-
-    # On Linux / WSL2
-    source .venv/bin/activate
-
-.. code-block:: powershell
-
-    # On Windows (powershell)
-    ./.venv/Scripts/activate
-
 Make sure all tests pass:
 
 .. code-block:: bash
@@ -57,7 +45,7 @@ You can test a specific provider using:
 
 .. code-block:: bash
 
-    pytest tests/providers/test_foo.py
+    uvx pytest tests/providers/test_foo.py
 
 .. note::
 
