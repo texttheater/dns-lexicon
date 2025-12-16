@@ -56,6 +56,7 @@ softlayer = ["softlayer >= 5"]
 gransy = ["zeep >= 3"]
 oci = ["oci >= 2"]
 qcloud = ["tencentcloud-sdk-python >= 3"]
+allinkl = ["mechanicalsoup >= 1.4.0"]
 full = [
     "boto3 >= 1.28",
     "localzone >= 0.9.8",
@@ -63,6 +64,7 @@ full = [
     "zeep >= 3",
     "oci >= 2",
     "tencentcloud-sdk-python >= 3",
+    "mechanicalsoup >= 1.4.0",
 ]
 
 [dependency-groups]
